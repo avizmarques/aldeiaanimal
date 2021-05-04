@@ -1,14 +1,21 @@
 import Image from "next/image";
 import About from "../components/clinica/about";
+import PageTopImage from "../components/pageTopImage";
 import ExpandableService from "../components/services/expandableService";
 
 export default function Servicos() {
   return (
     <div>
-      <Image src="/images/herocropped.png" width={2700} height={836} />
-      <div className="flex py-24">
-        <div className="w-1/3">image</div>
-        <div className="w-2/3">
+      <PageTopImage label="Os nossos servicos" />
+      <div className="flex py-24 items-center">
+        <div className="w-1/2 flex justify-center">
+          <Image
+            src="/images/heart-dogs.png"
+            height={347 * 0.9}
+            width={406 * 0.9}
+          />
+        </div>
+        <div className="w-1/2">
           <div className="font-display text-4xl text-green">
             Os nossos servicos
           </div>
@@ -23,10 +30,11 @@ export default function Servicos() {
           </p>
         </div>
       </div>
-      <div className="flex bg-blue-light py-24">
-        <div className="w-1/2">
-          <ExpandableService />
-        </div>
+      <div className="flex flex-wrap bg-blue-light py-24">
+        <ExpandableService />
+        <ExpandableService />
+        <ExpandableService />
+        <ExpandableService />
       </div>
     </div>
   );

@@ -1,3 +1,9 @@
+import PageTopImage from "../components/pageTopImage";
+
 export default function Contacto() {
-  return <div>contacto</div>;
+  return (
+    <div>
+      <PageTopImage label="Contacte-nos" />
+    </div>
+  );
 }

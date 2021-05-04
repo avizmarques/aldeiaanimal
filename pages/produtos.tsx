@@ -1,3 +1,9 @@
+import PageTopImage from "../components/pageTopImage";
+
 export default function Produtos() {
-  return <div>produtos</div>;
+  return (
+    <div>
+      <PageTopImage label="Os nossos produtos" />
+    </div>
+  );
 }
