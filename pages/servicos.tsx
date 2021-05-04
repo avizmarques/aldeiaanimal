@@ -1,9 +1,19 @@
 import Image from "next/image";
-import About from "../components/clinica/about";
+import axios from "axios";
+
+import { Service } from "../model/service";
 import PageTopImage from "../components/pageTopImage";
 import ExpandableService from "../components/services/expandableService";
 
-export default function Servicos() {
+export async function getStaticProps() {
+  const { data } = await axios.get("http://localhost:1337/services");
+
+  return {
+    props: { services: data },
+  };
+}
+
+export default function Servicos({ services }: { services: Service[] }) {
   return (
     <div>
       <PageTopImage label="Os nossos servicos" />
@@ -31,10 +41,9 @@ export default function Servicos() {
         </div>
       </div>
       <div className="flex flex-wrap bg-blue-light py-24">
-        <ExpandableService />
-        <ExpandableService />
-        <ExpandableService />
-        <ExpandableService />
+        {services.map((service) => (
+          <ExpandableService service={service} />
+        ))}
       </div>
     </div>
   );
