@@ -1,7 +1,9 @@
-import { MdStar } from "react-icons/md";
 import Image from "next/image";
 
-export default function DraBa() {
+import { Review } from "../../model/review";
+import ReviewCard from "../reviewCard";
+
+export default function DraBa({ reviews }: { reviews: Review[] }) {
   return (
     <div className="py-24 flex items-center">
       <div className="w-1/2 pr-24 flex flex-col justify-end items-end">
@@ -15,17 +17,9 @@ export default function DraBa() {
         </div>
       </div>
       <div className="w-1/2 pl-24">
-        <div className="flex mb-4">
-          <MdStar color="#364F59" size={40} />
-          <MdStar color="#364F59" size={40} />
-          <MdStar color="#364F59" size={40} />
-          <MdStar color="#364F59" size={40} />
-          <MdStar color="#364F59" size={40} />
-        </div>
-        <div className="text-xl font-bold w-1/2 mb-4">
-          A Dra. Barbara e sempre muito atenciosa com o meu gatinho.
-        </div>
-        <div>- senhora que mora na esquina</div>
+        {reviews.map((review) => (
+          <ReviewCard review={review} />
+        ))}
       </div>
     </div>
   );
