@@ -10,14 +10,19 @@ export default function Footer() {
       <div className="flex items-center">
         <div className="w-1/3 flex items-center ml-24">
           <div>
-            <IconLogo size={50} />
-            <div className="font-display text-4xl text-white mt-4">
+            <Image
+              src="/images/logo-white.png"
+              height={1650 / 11}
+              width={1683 / 11}
+              alt="logo"
+            />
+            {/* <div className="font-display text-4xl text-white mt-4">
               Aldeia Animal
             </div>
             <div className="font-display text-2xl text-white mb-4">
               Consultorio Veterinario
-            </div>
-            <div className="flex">
+            </div> */}
+            <div className="flex justify-center">
               <a
                 className="mr-2"
                 href="https://www.instagram.com/animalaldeia/"

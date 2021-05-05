@@ -16,8 +16,8 @@ export default function Menu() {
       <div className="ml-10 mr-10">
         <Image
           src="/images/logo.png"
-          height={171 / 2}
-          width={129 / 2}
+          height={1650 / 11}
+          width={1683 / 11}
           alt="logo"
         />
       </div>

@@ -1,9 +1,15 @@
 import { MdStar, MdStarBorder } from "react-icons/md";
 import { Review } from "../model/review";
 
-export default function ReviewCard({ review }: { review: Review }) {
+export default function ReviewCard({
+  review,
+  className,
+}: {
+  review: Review;
+  className?: string;
+}) {
   return (
-    <div>
+    <div className={className}>
       <Stars stars={review.stars} />
       <div className="text-xl font-bold w-1/2 mb-4">{review.quote}</div>
       <div>- {review.author}</div>
