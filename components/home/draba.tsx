@@ -1,7 +1,10 @@
 import Image from "next/image";
+import { Carousel } from "react-responsive-carousel";
 
 import { Review } from "../../model/review";
 import ReviewCard from "../reviewCard";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function DraBa({ reviews }: { reviews: Review[] }) {
   return (
@@ -17,9 +20,17 @@ export default function DraBa({ reviews }: { reviews: Review[] }) {
         </div>
       </div>
       <div className="w-1/2 pl-24">
-        {reviews.map((review) => (
-          <ReviewCard review={review} />
-        ))}
+        <Carousel
+          autoPlay
+          infiniteLoop
+          showArrows={false}
+          showIndicators={false}
+          showStatus={false}
+        >
+          {reviews.map((review) => (
+            <ReviewCard review={review} />
+          ))}
+        </Carousel>
       </div>
     </div>
   );
