@@ -1,5 +1,4 @@
 import Image from "next/image";
-import IconLogo from "../iconlogo";
 
 export default function Hero() {
   return (
@@ -11,11 +10,6 @@ export default function Hero() {
           width={1683 / 4}
           alt="logo"
         />
-        {/* <IconLogo size={100} />
-        <div className="font-display text-white text-7xl">Aldeia Animal</div>
-        <div className="font-display text-white text-5xl">
-          Consultorio Veterinario
-        </div> */}
       </div>
       <Image
         src="/images/herodog.jpg"

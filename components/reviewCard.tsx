@@ -1,17 +1,23 @@
 import { MdStar, MdStarBorder } from "react-icons/md";
+
 import { Review } from "../model/review";
 
 export default function ReviewCard({
   review,
-  className,
+  background,
 }: {
   review: Review;
-  className?: string;
+  background?: boolean;
 }) {
   return (
-    <div className={className}>
+    <div
+      className={
+        background &&
+        "bg-blue-light rounded rounded-lg p-10 flex flex-col items-center justify-center"
+      }
+    >
       <Stars stars={review.stars} />
-      <div className="text-xl font-bold w-1/2 mb-4">{review.quote}</div>
+      <div className="text-xl font-bold mb-4">{review.quote}</div>
       <div>- {review.author}</div>
     </div>
   );
