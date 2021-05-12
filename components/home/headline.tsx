@@ -5,17 +5,17 @@ import { Button } from "../button";
 
 export default function Headline({ headline }: { headline: HeadlineText }) {
   return (
-    <div className="flex py-24 items-center justify-end">
-      <div className="w-1/2 flex flex-col justify-end items-end pr-24">
-        <div className="font-display text-5xl text-right mb-8">
+    <div className="md:flex py-24 items-center justify-end">
+      <div className="md:w-1/2 flex flex-col md:justify-end md:items-end justify-center items-center p-6">
+        <div className="font-display text-5xl text-center md:text-right mb-8">
           {headline.title}
         </div>
-        <div className="text-right w-1/2 mb-8 leading-normal">
+        <div className="text-center md:text-right md:w-1/2 mb-8 leading-normal">
           {headline.content}
         </div>
         <Button label="Ler mais" href="/clinica" />
       </div>
-      <div className="w-1/2 pl-24 flex items-center">
+      <div className="md:block hidden md:w-1/2 flex items-center justify-center p-6">
         <Image
           src="/images/heart-dogs.png"
           height={347 * 0.9}
