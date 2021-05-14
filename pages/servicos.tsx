@@ -1,7 +1,7 @@
 import Image from "next/image";
 import axios from "axios";
 
-import { Service } from "../model/service";
+import { Service } from "../model";
 import PageTopImage from "../components/pageTopImage";
 import ExpandableService from "../components/services/expandableService";
 
@@ -40,10 +40,12 @@ export default function Servicos({ services }: { services: Service[] }) {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap bg-blue-light py-24">
-        {services.map((service) => (
-          <ExpandableService service={service} />
-        ))}
+      <div className="bg-blue-light py-24">
+        <div className="grid grid-cols-2 gap-x-24 gap-y-8">
+          {services.map((service, i) => (
+            <ExpandableService service={service} i={i} />
+          ))}
+        </div>
       </div>
     </div>
   );

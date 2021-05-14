@@ -1,20 +1,48 @@
 import { useState } from "react";
+import cn from "classnames";
 import { MdExpandMore } from "react-icons/md";
 
-import { Service } from "../../model/service";
+import { Service } from "../../model";
 
-export default function ExpandableService({ service }: { service: Service }) {
+export default function ExpandableService({
+  service,
+  i,
+}: {
+  service: Service;
+  i: number;
+}) {
   const [expanded, setExpanded] = useState<boolean>(false);
+  const side = i % 2 === 0 ? "right" : "left";
 
   return (
-    <div className="flex flex-col items-end mr-12">
-      <div className="flex items-center justify-end mb-4">
+    <div>
+      <div
+        className={cn(
+          "flex items-center mb-4",
+          side === "left" ? "justify-start" : side === "right" && "justify-end"
+        )}
+      >
+        {side === "left" && (
+          <button onClick={() => setExpanded(!expanded)}>
+            <MdExpandMore size={30} />
+          </button>
+        )}
         <div className="font-display text-4xl">{service.name}</div>
-        <button onClick={() => setExpanded(!expanded)}>
-          <MdExpandMore size={30} />
-        </button>
+        {side === "right" && (
+          <button onClick={() => setExpanded(!expanded)}>
+            <MdExpandMore size={30} />
+          </button>
+        )}
       </div>
-      {expanded && <p className="text-right w-1/2">{service.description}</p>}
+      {expanded && (
+        <p
+          className={cn(
+            side === "right" ? "text-right" : side === "left" && "text-left"
+          )}
+        >
+          {service.description}
+        </p>
+      )}
     </div>
   );
 }
