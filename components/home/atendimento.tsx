@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MdPhone } from "react-icons/md";
 
 import { Button } from "../button";
 
@@ -18,7 +19,7 @@ export default function Atendimento({
           dangerouslySetInnerHTML={{ __html: openingTimes }}
           className="mb-4"
         />
-        <Button label="Fazer marcacao" />
+        <Button label="Fazer marcação" Icon={MdPhone} />
       </div>
     </div>
   );
