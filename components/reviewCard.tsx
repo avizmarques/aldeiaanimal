@@ -1,21 +1,16 @@
 import { MdStar, MdStarBorder } from "react-icons/md";
 
-import { Review } from "../model/review";
+import { Review } from "../model";
 
 export default function ReviewCard({
   review,
-  background,
+  centered,
 }: {
   review: Review;
-  background?: boolean;
+  centered?: boolean;
 }) {
   return (
-    <div
-      className={
-        background &&
-        "bg-blue-light rounded rounded-lg p-10 flex flex-col items-center justify-center"
-      }
-    >
+    <div className={centered && "flex flex-col items-center justify-center"}>
       <Stars stars={review.stars} />
       <div className="text-xl font-bold mb-4">{review.quote}</div>
       <div>- {review.author}</div>

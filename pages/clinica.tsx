@@ -1,5 +1,4 @@
 import axios from "axios";
-import Image from "next/image";
 import remark from "remark";
 import html from "remark-html";
 import { Carousel } from "react-responsive-carousel";
@@ -22,7 +21,7 @@ export async function getStaticProps() {
   const { data: about } = await axios.get("http://localhost:1337/about");
 
   const htmlAbout = await remark().use(html).process(about.about);
-  console.log(htmlAbout);
+
   return {
     props: {
       reviews,
@@ -46,18 +45,18 @@ export default function Clinica({
       <PageTopImage label="Sobre a nossa clinica" />
       <About text={about} />
       <Atendimento openingTimes={openingTimes} />
-      <div className="p-24 flex flex-col items-center justify-center">
-        <div className="font-display text-5xl text-green mb-8">Avaliações</div>
+      <div className="p-24 flex flex-col items-center justify-center max-w-screen overflow-hidden">
+        <div className="font-display text-5xl text-green mb-12">Avaliações</div>
         <Carousel
           autoPlay
           infiniteLoop
           showArrows={false}
           showIndicators={false}
           showStatus={false}
-          width={600}
+          width={300}
         >
           {reviews.map((review) => (
-            <ReviewCard review={review} background />
+            <ReviewCard review={review} centered />
           ))}
         </Carousel>
       </div>

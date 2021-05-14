@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function About({ text }: { text: string }) {
   return (
     <div>
-      <div className="flex my-24 items-center">
-        <div className="w-1/3 flex justify-end items-end">
+      <div className="container md:grid md:grid-cols-3 md:gap-24 py-24">
+        <div className="hidden md:flex justify-end items-end">
           <Image src="/images/animals-playing.png" height={174} width={261} />
           <Image src="/images/dr-graphic.png" height={361} width={70} />
         </div>
-        <div className="w-2/3 pl-24">
+        <div className="px-8 md:px-0 md:col-span-2">
           <div className="font-display text-4xl text-green mb-2">
             Sobre nos...
           </div>
