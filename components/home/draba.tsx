@@ -26,7 +26,7 @@ export default function DraBa({
           {profile.about}
         </div>
       </div>
-      <div className="flex items-center">
+      <div className="hidden md:flex items-center">
         <Carousel
           autoPlay
           infiniteLoop

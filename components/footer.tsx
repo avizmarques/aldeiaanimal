@@ -2,13 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ImInstagram, ImFacebook2 } from "react-icons/im";
 import { MdPhone, MdEmail, MdPlace } from "react-icons/md";
-import IconLogo from "./iconlogo";
 
 export default function Footer() {
   return (
     <div className="bg-blue-dark p-24">
-      <div className="grid grid-cols-3 gap-24 items-center">
-        <div className="flex items-center">
+      <div className="sm:grid sm:grid-cols-3 sm:gap-24 sm:items-center flex flex-col items-center">
+        <div className="flex items-center mb-8 md:mb-0">
           <div>
             <Image
               src="/images/logo-white.png"
@@ -16,12 +15,6 @@ export default function Footer() {
               width={1683 / 11}
               alt="logo"
             />
-            {/* <div className="font-display text-4xl text-white mt-4">
-              Aldeia Animal
-            </div>
-            <div className="font-display text-2xl text-white mb-4">
-              Consultorio Veterinario
-            </div> */}
             <div className="flex justify-center">
               <a
                 className="mr-2"
@@ -43,16 +36,18 @@ export default function Footer() {
           </div>
         </div>
         <div className="">
-          <div className="font-display text-3xl text-white mb-2">Contacto</div>
+          <div className="font-display text-3xl text-white mb-2 hidden sm:block">
+            Contacto
+          </div>
           <div className="flex">
-            <MdPhone color="white" size={25} className="mr-2" />
+            <MdPhone color="white" size={25} className="mr-2 hidden md:block" />
             <div className="text-white">96 123 456</div>
           </div>
           <div className="flex">
-            <MdEmail color="white" size={25} className="mr-2" />
+            <MdEmail color="white" size={25} className="mr-2 hidden md:block" />
             <div className="text-white">barbara@barbara.com</div>
           </div>
-          <div className="flex">
+          <div className="hidden md:flex">
             <MdPlace color="white" size={25} className="mr-2" />
             <div>
               <div className="text-white">
@@ -63,7 +58,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="hidden md:block">
           <div className="font-display text-3xl text-white mb-2">Links</div>
           <div className="text-white flex flex-col">
             <Link href="/">Home</Link>
