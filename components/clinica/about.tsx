@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Atendimento from "../home/atendimento";
 
-export default function About() {
+export default function About({ text }: { text: string }) {
   return (
     <div>
       <div className="flex my-24 items-center">
@@ -13,35 +12,7 @@ export default function About() {
           <div className="font-display text-4xl text-green mb-2">
             Sobre nos...
           </div>
-          <div className="font-display text-5xl mb-4">A Aldeia Animal</div>
-          <p className="w-1/2 mb-4">
-            Na clincia da Dra. Barbara Vizinho tratamos todos os bichos assim e
-            assado. Escreve aqui qualquer coisa fixe sobre a tua clinica e
-            porque e que gostas de tratar dos bichinhos ou outra cena qq que
-            queiras dizer Na clincia da Dra. Barbara Vizinho tratamos todos os
-            bichos assim e assado. Escreve aqui qualquer coisa fixe sobre a tua
-            clinica e porque e que gostas de tratar dos bichinhos ou outra cena
-            qq que queiras dizer
-          </p>
-          <p className="w-1/2 mb-8">
-            Na clincia da Dra. Barbara Vizinho tratamos todos os bichos assim e
-            assado. Escreve aqui qualquer coisa fixe sobre a tua clinica e
-            porque e que gostas de tratar dos bichinhos ou outra cena qq que
-            queiras dizer Na clincia da Dra. Barbara Vizinho tratamos todos os
-            bichos assim e assado. Escreve aqui qualquer coisa fixe sobre a tua
-            clinica e porque e que gostas de tratar dos bichinhos ou outra cena
-            qq que queiras dizer
-          </p>
-          <div className="font-display text-5xl mb-4">A Dra. Barbara</div>
-          <p className="w-1/2">
-            Na clincia da Dra. Barbara Vizinho tratamos todos os bichos assim e
-            assado. Escreve aqui qualquer coisa fixe sobre a tua clinica e
-            porque e que gostas de tratar dos bichinhos ou outra cena qq que
-            queiras dizer Na clincia da Dra. Barbara Vizinho tratamos todos os
-            bichos assim e assado. Escreve aqui qualquer coisa fixe sobre a tua
-            clinica e porque e que gostas de tratar dos bichinhos ou outra cena
-            qq que queiras dizer
-          </p>
+          <div dangerouslySetInnerHTML={{ __html: text }} />
         </div>
       </div>
     </div>

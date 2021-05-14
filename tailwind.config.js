@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -30,5 +31,21 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        h1: {
+          fontSize: theme("fontSize.5xl"),
+          fontFamily: "Amatic SC",
+        },
+        h2: { fontSize: theme("fontSize.4xl"), fontFamily: "Amatic SC" },
+        h3: { fontSize: theme("fontSize.3xl"), fontFamily: "Amatic SC" },
+        p: {
+          lineHeight: "1.5em",
+          marginBottom: "1rem",
+          fontSize: theme("fontSize.lg"),
+        },
+      });
+    }),
+  ],
 };

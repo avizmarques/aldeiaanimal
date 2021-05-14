@@ -17,23 +17,34 @@ export async function getStaticProps() {
   const { data: openingTimes } = await axios.get(
     "http://localhost:1337/horario-de-atendimento"
   );
-
   const htmlTimes = await remark().use(html).process(openingTimes.horario);
 
-  return { props: { reviews, openingTimes: htmlTimes.contents } };
+  const { data: about } = await axios.get("http://localhost:1337/about");
+
+  const htmlAbout = await remark().use(html).process(about.about);
+  console.log(htmlAbout);
+  return {
+    props: {
+      reviews,
+      openingTimes: htmlTimes.contents,
+      about: htmlAbout.contents,
+    },
+  };
 }
 
 export default function Clinica({
   reviews,
   openingTimes,
+  about,
 }: {
   reviews: Review[];
   openingTimes: string;
+  about: string;
 }) {
   return (
     <div>
       <PageTopImage label="Sobre a nossa clinica" />
-      <About />
+      <About text={about} />
       <Atendimento openingTimes={openingTimes} />
       <div className="p-24 flex flex-col items-center justify-center">
         <div className="font-display text-5xl text-green mb-8">Avaliações</div>
