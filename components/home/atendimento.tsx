@@ -10,7 +10,7 @@ export default function Atendimento({
 }) {
   return (
     <div className="bg-blue-light md:grid md:grid-cols-2">
-      <div className="hidden md:block relative">
+      <div className="relative h-60 md:h-auto">
         <Image src="/images/cat-bg-green.jpg" layout="fill" objectFit="cover" />
       </div>
       <div className="flex flex-col items-center text-center py-24">

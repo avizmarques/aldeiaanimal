@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="bg-blue md:grid grid-cols-2">
+    <div className="bg-blue md:grid md:grid-cols-2">
       <div className="flex items-center justify-center py-12">
         <Image
           src="/images/logo-white.png"
@@ -11,7 +11,7 @@ export default function Hero() {
           alt="logo"
         />
       </div>
-      <div className="relative">
+      <div className="relative h-60 w-screen md:w-auto md:h-auto">
         <Image
           src="/images/herodog.jpg"
           alt="dog"
