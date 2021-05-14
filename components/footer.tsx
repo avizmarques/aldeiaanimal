@@ -6,9 +6,9 @@ import IconLogo from "./iconlogo";
 
 export default function Footer() {
   return (
-    <div className="bg-blue-dark py-24">
-      <div className="flex items-center">
-        <div className="w-1/3 flex items-center ml-24">
+    <div className="bg-blue-dark p-24">
+      <div className="grid grid-cols-3 gap-24 items-center">
+        <div className="flex items-center">
           <div>
             <Image
               src="/images/logo-white.png"
@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-1/3">
+        <div className="">
           <div className="font-display text-3xl text-white mb-2">Contacto</div>
           <div className="flex">
             <MdPhone color="white" size={25} className="mr-2" />
@@ -63,7 +63,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-1/3">
+        <div className="">
           <div className="font-display text-3xl text-white mb-2">Links</div>
           <div className="text-white flex flex-col">
             <Link href="/">Home</Link>

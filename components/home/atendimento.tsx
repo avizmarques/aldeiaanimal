@@ -8,15 +8,11 @@ export default function Atendimento({
   openingTimes: string;
 }) {
   return (
-    <div className="flex items-center justify-center md:justify-start bg-blue-light">
-      <div className="hidden md:block md:w-1/2">
-        <Image
-          src="/images/cat-bg-green.jpg"
-          width={5026 / 8}
-          height={3458 / 8}
-        />
+    <div className="bg-blue-light md:grid md:grid-cols-2">
+      <div className="hidden md:block relative">
+        <Image src="/images/cat-bg-green.jpg" layout="fill" objectFit="cover" />
       </div>
-      <div className="md:w-1/2 p-6 flex flex-col items-center text-center">
+      <div className="flex flex-col items-center text-center py-24">
         <div className="font-display text-4xl mb-4">Horario de atendimento</div>
         <div
           dangerouslySetInnerHTML={{ __html: openingTimes }}

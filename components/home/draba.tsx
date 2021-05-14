@@ -14,17 +14,19 @@ export default function DraBa({
   profile: Profile;
 }) {
   return (
-    <div className="py-24 flex items-center">
-      <div className="w-1/2 pr-24 flex flex-col justify-end items-end">
+    <div className="md:grid md:grid-cols-2 gap-24 py-24">
+      <div className="flex flex-col md:justify-end md:items-end justify-center items-center px-12 md:px-0">
         <Image
           src={`http://localhost:1337${profile.photo.url}`}
           width={profile.photo.width}
           height={profile.photo.height}
         />
         <div className="font-display text-4xl mt-4 mb-4">{profile.name}</div>
-        <div className="w-1/2 text-right">{profile.about}</div>
+        <div className="md:w-1/2 md:text-right text-center">
+          {profile.about}
+        </div>
       </div>
-      <div className="w-1/2 pl-24">
+      <div className="flex items-center">
         <Carousel
           autoPlay
           infiniteLoop
