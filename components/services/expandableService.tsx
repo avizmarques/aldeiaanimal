@@ -12,34 +12,36 @@ export default function ExpandableService({
   i: number;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
-  const side = i % 2 === 0 ? "right" : "left";
+  const side = i % 2 === 0 ? "left" : "right";
 
   return (
     <div>
       <div
         className={cn(
           "flex items-center mb-4",
-          side === "left" ? "justify-start" : side === "right" && "justify-end"
+          side === "left"
+            ? "md:justify-end"
+            : side === "right" && "md:justify-start"
         )}
       >
-        {side === "left" && (
-          <button onClick={() => setExpanded(!expanded)}>
+        {side === "right" && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="hidden md:inline-block"
+          >
             <MdExpandMore size={30} />
           </button>
         )}
         <div className="font-display text-4xl">{service.name}</div>
-        {side === "right" && (
-          <button onClick={() => setExpanded(!expanded)}>
-            <MdExpandMore size={30} />
-          </button>
-        )}
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className={cn(side === "right" && "md:hidden")}
+        >
+          <MdExpandMore size={30} />
+        </button>
       </div>
       {expanded && (
-        <p
-          className={cn(
-            side === "right" ? "text-right" : side === "left" && "text-left"
-          )}
-        >
+        <p className={cn("text-left", side === "left" && "md:text-right")}>
           {service.description}
         </p>
       )}

@@ -1,47 +1,52 @@
 import Image from "next/image";
 import axios from "axios";
+import remark from "remark";
+import html from "remark-html";
 
 import { Service } from "../model";
 import PageTopImage from "../components/pageTopImage";
 import ExpandableService from "../components/services/expandableService";
 
 export async function getStaticProps() {
-  const { data } = await axios.get("http://localhost:1337/services");
+  const { data: services } = await axios.get("http://localhost:1337/services");
+  const { data: servicesText } = await axios.get(
+    "http://localhost:1337/services-description"
+  );
+
+  const htmlText = await remark().use(html).process(servicesText.text);
 
   return {
-    props: { services: data },
+    props: { services, servicesText: htmlText.contents },
   };
 }
 
-export default function Servicos({ services }: { services: Service[] }) {
+export default function Servicos({
+  services,
+  servicesText,
+}: {
+  services: Service[];
+  servicesText: string;
+}) {
   return (
     <div>
       <PageTopImage label="Os nossos servicos" />
-      <div className="flex py-24 items-center">
-        <div className="w-1/2 flex justify-center">
+      <div className="py-24 px-8 md:px-24 md:grid md:grid-cols-3 md:gap-8">
+        <div className="flex justify-center relative h-60 mb-12 md:mb-0">
           <Image
             src="/images/heart-dogs.png"
-            height={347 * 0.9}
-            width={406 * 0.9}
+            layout="fill"
+            objectFit="contain"
           />
         </div>
-        <div className="w-1/2">
+        <div className="md:col-span-2">
           <div className="font-display text-4xl text-green">
             Os nossos servicos
           </div>
-          <div className="font-display text-5xl mb-8">
-            O que podemos fazer pelos seus bichinhos
-          </div>
-          <p className="w-1/2">
-            Na clincia da Dra. Barbara Vizinho tratamos todos os bichos assim e
-            assado. Escreve aqui qualquer coisa fixe sobre a tua clinica e
-            porque e que gostas de tratar dos bichinhos ou outra cena qq que
-            queiras dizer.
-          </p>
+          <div dangerouslySetInnerHTML={{ __html: servicesText }} />
         </div>
       </div>
       <div className="bg-blue-light py-24">
-        <div className="grid grid-cols-2 gap-x-24 gap-y-8">
+        <div className="px-8 md:px-60 md:grid md:grid-cols-2 md:gap-x-24 md:gap-y-8">
           {services.map((service, i) => (
             <ExpandableService service={service} i={i} />
           ))}
