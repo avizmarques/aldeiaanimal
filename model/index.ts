@@ -35,3 +35,14 @@ export type Profile = {
     height: number;
   };
 };
+
+export type Product = {
+  id: number;
+  titulo: string;
+  descricao: string;
+  foto: {
+    url: string;
+    width: number;
+    height: number;
+  };
+};
