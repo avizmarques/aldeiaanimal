@@ -41,7 +41,9 @@ export default function Footer() {
           </div>
           <div className="flex">
             <MdPhone color="white" size={25} className="mr-2 hidden md:block" />
-            <div className="text-white">+351 912 829 779</div>
+            <div className="text-white">
+              <a href="tel:+35191282977">+351 912 829 779</a>
+            </div>
           </div>
           <div className="flex">
             <MdEmail color="white" size={25} className="mr-2 hidden md:block" />

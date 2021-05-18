@@ -28,7 +28,9 @@ export default function Contacto() {
           </a>
           <div className="flex mb-4">
             <MdPhone size={30} color="#364F59" className="mr-4" />
-            <p>+351 912 829 779</p>
+            <p>
+              <a href="tel:+35191282977">+351 912 829 779</a>
+            </p>
           </div>
           <div className="flex mb-4">
             <MdEmail size={30} color="#364F59" className="mr-4" />
