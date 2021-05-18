@@ -3,9 +3,10 @@ import axios from "axios";
 import { Product } from "../model";
 import PageTopImage from "../components/pageTopImage";
 import { ProductCard } from "../components/products/productCard";
+import { url } from "./_app";
 
 export async function getStaticProps() {
-  const { data: products } = await axios.get("http://localhost:1337/produtos");
+  const { data: products } = await axios.get(`${url}/produtos`);
 
   return {
     props: {
