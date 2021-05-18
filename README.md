@@ -1,4 +1,5 @@
-#Aldeia Animal - Vet clinic
+# Aldeia Animal - Vet clinic
+
 This project was made using NextJS to create a fast statically generated website that showcases a veterinary clinic.
 It was made for my cousin, which is why the whole content is in Portuguese.
 
