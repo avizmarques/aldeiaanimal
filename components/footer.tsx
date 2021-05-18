@@ -41,19 +41,26 @@ export default function Footer() {
           </div>
           <div className="flex">
             <MdPhone color="white" size={25} className="mr-2 hidden md:block" />
-            <div className="text-white">96 123 456</div>
+            <div className="text-white">+351 912 829 779</div>
           </div>
           <div className="flex">
             <MdEmail color="white" size={25} className="mr-2 hidden md:block" />
-            <div className="text-white">barbara@barbara.com</div>
+            <div className="text-white">
+              <a href="mailto:bavrocha@gmail.com">bavrocha@gmail.com</a>
+            </div>
           </div>
           <div className="hidden md:flex">
             <MdPlace color="white" size={25} className="mr-2" />
             <div>
               <div className="text-white">
-                Rua Dom Manuel Trindade Salgueiro 100B
-                <br />
-                3830-655 Gafanha da Nazare
+                <a
+                  className="flex mb-4"
+                  href="https://goo.gl/maps/F88WLsMEwdvu5m3R9"
+                >
+                  Rua Dom Manuel Trindade Salgueiro 100B
+                  <br />
+                  3830-655 Gafanha da Nazare
+                </a>
               </div>
             </div>
           </div>
