@@ -10,15 +10,16 @@ import About from "../components/clinica/about";
 import PageTopImage from "../components/pageTopImage";
 import ReviewCard from "../components/reviewCard";
 import Atendimento from "../components/home/atendimento";
+import { url } from "./_app";
 
 export async function getStaticProps() {
-  const { data: reviews } = await axios.get("http://localhost:1337/reviews");
+  const { data: reviews } = await axios.get(`${url}/reviews`);
   const { data: openingTimes } = await axios.get(
-    "http://localhost:1337/horario-de-atendimento"
+    `${url}/horario-de-atendimento`
   );
   const htmlTimes = await remark().use(html).process(openingTimes.horario);
 
-  const { data: about } = await axios.get("http://localhost:1337/about");
+  const { data: about } = await axios.get(`${url}/about`);
 
   const htmlAbout = await remark().use(html).process(about.about);
 

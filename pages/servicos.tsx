@@ -6,12 +6,11 @@ import html from "remark-html";
 import { Service } from "../model";
 import PageTopImage from "../components/pageTopImage";
 import ExpandableService from "../components/services/expandableService";
+import { url } from "./_app";
 
 export async function getStaticProps() {
-  const { data: services } = await axios.get("http://localhost:1337/services");
-  const { data: servicesText } = await axios.get(
-    "http://localhost:1337/services-description"
-  );
+  const { data: services } = await axios.get(`${url}/services`);
+  const { data: servicesText } = await axios.get(`${url}/services-description`);
 
   const htmlText = await remark().use(html).process(servicesText.text);
 

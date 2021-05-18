@@ -9,19 +9,18 @@ import Headline from "../components/home/headline";
 import Atendimento from "../components/home/atendimento";
 import DraBa from "../components/home/draba";
 import { Head } from "next/document";
+import { url } from "./_app";
 
 export async function getStaticProps() {
-  const { data: headline } = await axios.get("http://localhost:1337/headline");
-  const { data: reviews } = await axios.get("http://localhost:1337/reviews");
+  const { data: headline } = await axios.get(`${url}/headline`);
+  const { data: reviews } = await axios.get(`${url}/reviews`);
   const { data: openingTimes } = await axios.get(
-    "http://localhost:1337/horario-de-atendimento"
+    `${url}/horario-de-atendimento`
   );
 
   const htmlTimes = await remark().use(html).process(openingTimes.horario);
 
-  const { data: profile } = await axios.get(
-    "http://localhost:1337/dra-barbara"
-  );
+  const { data: profile } = await axios.get(`${url}//dra-barbara`);
 
   return {
     props: { reviews, headline, openingTimes: htmlTimes.contents, profile },

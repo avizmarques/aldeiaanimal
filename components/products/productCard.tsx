@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Product } from "../../model";
+import { url } from "../../pages/_app";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="p-8">
       <div className="h-40 relative">
         <Image
-          src={`http://localhost:1337${product.foto.url}`}
+          src={`${url}/${product.foto.url}`}
           layout="fill"
           objectFit="contain"
         />
