@@ -16,3 +16,15 @@ The whole website was designed (using Figma) and made from scratch by me.
 Dog photo by <a href="https://unsplash.com/@lexyism?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">alexandra lammerink</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Cat photo by <a href="https://unsplash.com/@madhatterzone?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Manja Vitolic</a> on <a href="https://unsplash.com/s/photos/cat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+## To do
+
+- Update with information (most information on the website right now is a placeholder)
+- Improve a couple of images
+- Add other information to strapi so it can be udpdated by the owner
+
+### TBD with owner
+
+- Deploy to own domain
+- Add google analytics
+- Better SEO
