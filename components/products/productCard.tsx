@@ -7,7 +7,7 @@ export function ProductCard({ product }: { product: Product }) {
     <div className="p-8">
       <div className="h-40 relative">
         <Image
-          src={`${url}/${product.foto.url}`}
+          src={`${url}${product.foto.url}`}
           layout="fill"
           objectFit="contain"
         />
