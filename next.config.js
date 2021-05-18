@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ["localhost", "herokuapp.com"],
+    domains: ["localhost", "aldeia-animal-cms.herokuapp.com"],
   },
 };

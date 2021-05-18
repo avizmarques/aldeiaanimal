@@ -5,6 +5,7 @@ import { Profile, Review } from "../../model";
 import ReviewCard from "../reviewCard";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { url } from "../../pages/_app";
 
 export default function DraBa({
   reviews,
@@ -17,7 +18,7 @@ export default function DraBa({
     <div className="md:grid md:grid-cols-2 gap-24 py-24">
       <div className="flex flex-col md:justify-end md:items-end justify-center items-center px-12 md:px-0">
         <Image
-          src={`http://localhost:1337${profile.photo.url}`}
+          src={`${url}${profile.photo.url}`}
           width={profile.photo.width}
           height={profile.photo.height}
         />

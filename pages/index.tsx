@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
   const htmlTimes = await remark().use(html).process(openingTimes.horario);
 
-  const { data: profile } = await axios.get(`${url}//dra-barbara`);
+  const { data: profile } = await axios.get(`${url}/dra-barbara`);
 
   return {
     props: { reviews, headline, openingTimes: htmlTimes.contents, profile },
