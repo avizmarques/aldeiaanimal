@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { ReactNode } from "react";
 import Menu from "./menu";
 import Footer from "./footer";

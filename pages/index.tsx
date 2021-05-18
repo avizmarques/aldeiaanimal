@@ -8,6 +8,7 @@ import Hero from "../components/home/hero";
 import Headline from "../components/home/headline";
 import Atendimento from "../components/home/atendimento";
 import DraBa from "../components/home/draba";
+import { Head } from "next/document";
 
 export async function getStaticProps() {
   const { data: headline } = await axios.get("http://localhost:1337/headline");
