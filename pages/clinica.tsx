@@ -56,8 +56,8 @@ export default function Clinica({
           showStatus={false}
           width={300}
         >
-          {reviews.map((review) => (
-            <ReviewCard review={review} centered />
+          {reviews.map((review, i) => (
+            <ReviewCard review={review} centered key={i} />
           ))}
         </Carousel>
       </div>

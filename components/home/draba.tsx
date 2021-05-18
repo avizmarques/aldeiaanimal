@@ -35,8 +35,8 @@ export default function DraBa({
           showIndicators={false}
           showStatus={false}
         >
-          {reviews.map((review) => (
-            <ReviewCard review={review} />
+          {reviews.map((review, i) => (
+            <ReviewCard review={review} key={i} />
           ))}
         </Carousel>
       </div>
