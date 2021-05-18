@@ -17,7 +17,7 @@ export default function Contacto() {
           />
         </div>
         <div>
-          {/* <h2 className="mb-4">Contacto</h2> */}
+          <h2 className="mb-4">Contacto</h2>
           <a className="flex mb-4" href="https://goo.gl/maps/F88WLsMEwdvu5m3R9">
             <MdPlace size={30} color="#364F59" className="mr-4" />
             <p>
@@ -38,7 +38,8 @@ export default function Contacto() {
               <a href="mailto:bavrocha@gmail.com">bavrocha@gmail.com</a>
             </p>
           </div>
-          <div className="flex">
+          <h2 className="mb-4">Redes sociais</h2>
+          <div className="flex items-center">
             <a
               className="mr-4"
               href="https://www.instagram.com/animalaldeia/"
