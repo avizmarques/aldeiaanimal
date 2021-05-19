@@ -10,7 +10,13 @@ export default function ReviewCard({
   centered?: boolean;
 }) {
   return (
-    <div className={centered && "flex flex-col items-center justify-center"}>
+    <div
+      className={
+        centered
+          ? "flex flex-col items-center justify-center"
+          : "flex flex-col items-start"
+      }
+    >
       <Stars stars={review.stars} />
       <div className="text-xl font-bold mb-4">{review.quote}</div>
       <div>- {review.author}</div>
