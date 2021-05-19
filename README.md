@@ -9,6 +9,7 @@ The whole website was designed (using Figma) and made from scratch by me.
 
 ## Links
 
+[Deployed app](https://aldeia-animal.vercel.app/)
 [Figma project](https://www.figma.com/file/iSG1Npeq34En0ySbbfkxXw/Aldeia-Animal?node-id=0%3A1)
 [Strapi CMS]("https://aldeia-animal-cms.herokuapp.com")
 
